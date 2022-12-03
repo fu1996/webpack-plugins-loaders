@@ -1,0 +1,25 @@
+{
+  "name": "@fu1996/i18n-translate-tool",
+  "version": "1.2.0",
+  "description": "",
+  "main": "index.js",
+  "git": "https://github.com/fu1996/i18n-translate-tool.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "node bin/postinstall.js || exit 0"
+  },
+  "bin": {
+    "itt": "./bin/index.js"
+  },
+  "keywords": [],
+  "author": "fujunkui",
+  "license": "MIT",
+  "dependencies": {
+    "@vitalets/google-translate-api": "^8.0.0",
+    "chalk": "^4.1.2",
+    "commander": "^9.4.0",
+    "esm": "^3.2.25",
+    "inquirer": "^8.2.4",
+    "lodash": "^4.17.21"
+  }
+}
