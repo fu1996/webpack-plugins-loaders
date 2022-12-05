@@ -6,11 +6,11 @@ function stringIncludes(string, maybeString) {
   return typeof maybeString === "string" ? string.includes(maybeString) : false;
 }
 
-module.exports = class AddModePlugin {
-  constructor({ mode, exclude, include, includeFileSuffix, debug = false }) {
+module.exports = class WebpackResolverModePlugin {
+  constructor({ mode, exclude, includeFileSuffix, debug = false }) {
     this.mode = mode;
     this.exclude =  exclude && !Array.isArray(exclude) ? [exclude] : exclude,
-    this.include =  include && !Array.isArray(include) ? [include] : include,
+    // this.include =  include && !Array.isArray(include) ? [include] : include,
     this.includeFileSuffix = includeFileSuffix;
     this.debug = debug;
   }

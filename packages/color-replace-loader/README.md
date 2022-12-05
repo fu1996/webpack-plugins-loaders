@@ -1,29 +1,47 @@
-# color-replace-loader
+## 🗝 关于该库的背景
 
-## Install this loader
-```shell
+> 因为人工进行颜色替换的效率太低，所以开发此插件，可以在打包构建时进行批量自动替换
+
+另外一个关于`css变量颜色替换的 loader 间项目：` (var-color-replace-loader)[https://github.com/fu1996/webpack-plugins-loaders/tree/main/packages/var-color-replace-loader]
+
+## 🎉 项目名称和原理
+
+`名称：` wenpack 颜色替换工具
+
+`原理：` 使用 loader 通过正则，把颜色查找出来 并进行替换
+
+## 📦 安装方式
+
+```bash
+# 为当前项目安装
 npm i -D color-replace-loader
 ```
 
-## How to configure
-Take less as an example
-```javascript
-            {
-                test: /\.less$/,
-                use: ['style-loader', 'css-loader', 'less-loader', {
-                    loader: path.resolve(__dirname, 'loaders/afterBabel'),
-                    options: {
-                        // color map object
-                        colorReplaceMap: {
-                            '#fff': '#000',
-                            '#aaa': '#bbb',
-                            '#ccc': '#ddd',
-                        },
-                    }
-                },]
+## 🏄 配置如下：
+
+对 webpack 配置文件修改
+
+```js
+{
+    test: /\.less$/,
+    use: ['style-loader', 'css-loader', 'less-loader', 
+    {
+        loader: 'color-replace-loader',
+        options: {
+            // key：要替换的颜色值 ，value：替换后的目标值
+            colorReplaceMap: {
+                '#fff': '#000',
+                '#aaa': '#bbb',
+                '#ccc': '#ddd',
             },
+        }
+    }]
+},
 ```
-Assume that the contents of the current index.less file are
+
+## 📝 demo
+当前 less 文件如下内容
+
 ```less
 body {
     width: 200px;
@@ -35,7 +53,8 @@ body {
 }
 ```
 
-After being processed by the loader, the content will change to the following code
+经过此 loader 处理以后的结果如下：
+
 ```css
 body {
     width: 200px;
@@ -47,7 +66,11 @@ body {
 }
 ```
 
-## Github
-https://github.com/fu1996/color-replace-loader.git
 
-If it helps you, please light up star. If there is a need, please mention issue.
+## 📣 后续开发计划
+
+暂无
+
+## ⏰ 如果该库帮助了您，期待您的 star
+
+Github 地址：[欢迎Star ⭐️](https://github.com/fu1996/webpack-plugins-loaders/tree/main/packages#:~:text=.%E2%80%8A.-,color%2Dreplace%2Dloader,-feat%3A%20update%20version)

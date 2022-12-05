@@ -1,29 +1,47 @@
-# var-color-replace-loader
+## 🗝 关于该库的背景
 
-## Install this loader
-```shell
+> 因为人工进行颜色替换的效率太低，所以开发此插件，可以在打包构建时进行批量自动替换
+
+另一一个关于`颜色替换的 loader 见项目：` (color-replace-loader)[https://github.com/fu1996/webpack-plugins-loaders/tree/main/packages/color-replace-loader]
+
+## 🎉 项目名称和原理
+
+`名称：` css变量颜色替换工具
+
+`原理：` 使用 loader 通过正则，把颜色查找出来 并对照已提供的 colorMap 的数据进行替换
+
+## 📦 安装方式
+
+```bash
+# 为当前项目安装
 npm i -D var-color-replace-loader
 ```
 
-## How to configure
-Take less as an example
-```javascript
-            {
-                test: /\.less$/,
-                use: ['style-loader', 'css-loader', 'less-loader', {
-                    loader: path.resolve(__dirname, 'loaders/afterBabel'),
-                    options: {
-                        // color map object
-                        colorMap: {
-                            '--color-cyan-1': '#f5f8ff',
-                            '--color-emerald-7': '#049160',
-                            '--color-indigo-5': '#41a7fa',
-                        },
-                    }
-                },]
+## 🏄 配置如下：
+
+对 webpack 配置文件修改
+
+```js
+{
+    test: /\.less$/,
+    use: ['style-loader', 'css-loader', 'less-loader', 
+    {
+        loader: 'var-color-replace-loader',
+        options: {
+            // 将项目中使用到的 #f5f8ff 替换为颜色变量 --color-cyan-1
+            colorMap: {
+                '--color-cyan-1': '#f5f8ff',
+                '--color-emerald-7': '#049160',
+                '--color-indigo-5': '#41a7fa',
             },
+        }
+    }]
+},
 ```
-Assume that the contents of the current index.less file are
+
+## 📝 demo
+当前 less 文件如下内容
+
 ```less
 body {
     width: 200px;
@@ -35,7 +53,8 @@ body {
 }
 ```
 
-After being processed by the loader, the content will change to the following code
+经过此 loader 处理以后的结果如下：
+
 ```css
 body {
     width: 200px;
@@ -47,7 +66,11 @@ body {
 }
 ```
 
-## Github
-https://github.com/fu1996/var-color-replace-loader
 
-If it helps you, please light up star. If there is a need, please mention issue.
+## 📣 后续开发计划
+
+暂无
+
+## ⏰ 如果该库帮助了您，期待您的 star
+
+Github 地址：[欢迎Star ⭐️](https://github.com/fu1996/webpack-plugins-loaders/tree/main/packages/var-color-replace-loader)
