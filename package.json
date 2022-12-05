@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publish": "sh scripts/publish.sh"
   },
   "keywords": [],
   "author": "fujunkui",
