@@ -25,8 +25,6 @@ npm i -D @fu1996/webapck-resolver-mode-plugin
 ## 🏄 配置如下：
 
 - mode ：指定哪些后缀在优先被打包
-- fileName ：生成的文件名 默认为 index.txt
-- clean ：是否清除上次该插件生成的产物（如：index.txt）
 - exclude ：【支持字符串和正则及其组成的数组】根据此规则哪些文件或者文件夹参与此次条件打包
 - includeFileSuffix ：指定哪些文件后缀参与条件打包
 - debug ：是否开启debug 模式
@@ -62,8 +60,8 @@ console.log('2222',a)
 假设同时 存在 `a.h5.js`和`a.js`，则 `a.h5.js`会选择作为 index.js 文件的依赖被打包进产物
 
 ## 📣 后续开发计划
-
-暂无
+1. 改为 ts
+2. 完善readme.md 的API文档
 
 ## ⏰ 如果该库帮助了您，期待您的 star
 
