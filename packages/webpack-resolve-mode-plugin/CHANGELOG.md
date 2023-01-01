@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.3](https://github.com/webpack/schema-utils/compare/v1.0.0...v1.0.3) (2023-01-01)
+## [1.0.3](https://github.com/fu1996/webpack-plugins-loaders/compare/v1.0.0...v1.0.3) (2023-01-01)
 
 ### Features
 
