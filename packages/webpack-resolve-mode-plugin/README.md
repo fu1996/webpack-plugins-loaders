@@ -24,10 +24,10 @@ npm i -D @fu1996/webapck-resolver-mode-plugin
 
 ## 🏄 配置如下：
 
-- mode ：指定哪些后缀在优先被打包
-- exclude ：【支持字符串和正则及其组成的数组】根据此规则哪些文件或者文件夹参与此次条件打包
-- includeFileSuffix ：指定哪些文件后缀参与条件打包
-- debug ：是否开启debug 模式
+- mode ：【可为空，只支持字符串，默认为: ''】指定哪些后缀在优先被打包
+- excludes ：【支持字符串和正则及其组成的数组,默认为/node_modules/】根据此规则哪些文件或者文件夹参与此次条件打包
+- includeFileSuffix ：【支持字符串组成的数组，默认为['.js']】指定哪些文件后缀参与条件打包
+- debug ：【仅支持布尔值】是否开启debug 模式
 
 ## 📝 demo
 
@@ -42,7 +42,7 @@ const WebpackResolverModePlugin = require('@fu1996/webapck-resolver-mode-plugin'
 resolve: {
     plugins: [
       new WebpackResolverModePlugin({
-        exclude: /node_modules/, // 排除的目录
+        excludes: /node_modules/, // 排除的目录
         includeFileSuffix: [".js", ".jsx"], // 参与条件渲染的文件后缀
         mode: "h5", // 目标 模式：根据此模式 自动打包
       })

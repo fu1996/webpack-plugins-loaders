@@ -1,15 +1,31 @@
 const path = require("path");
 const basename = require("enhanced-resolve/lib/getPaths").basename;
-const addInfix = require("./add-infix");
+const { validate } = require('schema-utils');
+const schema = require('./schema.json');
+
+/** @typedef {import('./types').WebpackResolverModePluginOptions} WebpackResolverModePluginOptions */
+
+function addInfix(resourcePath, infix, extname) {
+  extname = extname || path.extname(resourcePath)
+  return resourcePath.substring(0, resourcePath.length - extname.length) + '.' + infix + extname
+}
 
 function stringIncludes(string, maybeString) {
   return typeof maybeString === "string" ? string.includes(maybeString) : false;
 }
 
 module.exports = class WebpackResolverModePlugin {
-  constructor({ mode, exclude, includeFileSuffix, debug = false }) {
+  /**
+   * 
+   * @param {WebpackResolverModePluginOptions=} options options object
+   */
+  constructor(options) {
+    validate(schema, options, {
+      name: 'WebpackResolverModePlugin'
+  })
+    const { mode = '', excludes = /node_modules/, includeFileSuffix = ['.js'], debug = false } = options;
     this.mode = mode;
-    this.exclude =  exclude && !Array.isArray(exclude) ? [exclude] : exclude,
+    this.excludes =  excludes && !Array.isArray(excludes) ? [excludes] : excludes,
     // this.include =  include && !Array.isArray(include) ? [include] : include,
     this.includeFileSuffix = includeFileSuffix;
     this.debug = debug;
@@ -21,7 +37,8 @@ module.exports = class WebpackResolverModePlugin {
     resolver
       .getHook("before-file")
       .tapAsync("AddModePlugin", (request, resolveContext, callback) => {
-        if (request.mode) {
+        // 请求的mode 存在，或者 填入的mode 为空
+        if (request.mode || !mode) {
           return callback();
         }
 
@@ -35,10 +52,10 @@ module.exports = class WebpackResolverModePlugin {
           return callback();
         }
         if (
-          this.exclude &&
-          this.exclude.some(function (exclude) {
+          this.excludes &&
+          this.excludes.some(function (excludes) {
             return (
-              resourcePath.search(exclude) >= 0 || stringIncludes(resourcePath, exclude)
+              resourcePath.search(excludes) >= 0 || stringIncludes(resourcePath, excludes)
             );
           })
         ) {

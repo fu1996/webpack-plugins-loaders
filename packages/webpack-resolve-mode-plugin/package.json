@@ -1,6 +1,6 @@
 {
   "name": "@fu1996/webapck-resolver-mode-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Webpack plug-in that compiles files with different endings according to different configurations (conditional compilation at the file level)",
   "main": "index.js",
   "files": [
@@ -8,7 +8,7 @@
     "add-infix.js"
   ],
   "scripts": {
-    "test": "jest"
+    "prepublish": "jest"
   },
   "keywords": [
     "webpack",
@@ -19,7 +19,12 @@
   "license": "MIT",
   "github": "https://github.com/fu1996/webpack-plugins-loaders/tree/main/packages/webpack-resolve-mode-plugin",
   "dependencies": {
-    "enhanced-resolve": "^5.10.0"
+    "enhanced-resolve": "^5.10.0",
+    "schema-utils": "^4.0.0"
+  },
+  "peerDependencies": {
+    "enhanced-resolve": "^5.10.0",
+    "schema-utils": "^4.0.0"
   },
   "devDependencies": {
     "jest": "^29.3.1",

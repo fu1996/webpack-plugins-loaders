@@ -20,7 +20,7 @@ test("it should get h5 file", () => {
     useSyncFileSystemCalls: true,
     plugins: [
       new ResolverModePlugin({
-        exclude: /node_modules/, // 排除的目录
+        excludes: /node_modules/, // 排除的目录
         includeFileSuffix: [".js", ".jsx"], // 参与条件渲染的文件后缀
         mode: "h5", // 目标 模式：根据此模式 自动打包
       }),

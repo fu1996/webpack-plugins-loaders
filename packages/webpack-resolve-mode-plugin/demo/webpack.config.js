@@ -14,9 +14,9 @@ module.exports = {
     plugins: [
       // other option https://github.com/shaketbaby/directory-named-webpack-plugin
       new ResolverModePlugin({
-        exclude: [/node_modules/, 'exclude-dir'], // 排除的目录
+        excludes: [/node_modules/, 'exclude-dir'], // 排除的目录
         includeFileSuffix: [".js", ".json.js"], // 参与条件渲染的文件后缀
-        mode: "h5", // 目标 模式：根据此模式 自动打包
+        mode: '', // 目标 模式：根据此模式 自动打包
         debug: true, // 开启debug 模式
       }),
     ],
