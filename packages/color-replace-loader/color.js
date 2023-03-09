@@ -1,5 +1,5 @@
 module.exports = {
-  '#fff': '#000',
+  '#FFF': '#000',
   '#aaa': '#bbb',
   '#ccc': '#ddd',
 }
