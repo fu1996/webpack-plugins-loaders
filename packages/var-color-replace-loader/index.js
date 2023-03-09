@@ -4,7 +4,7 @@ const varColor = (rawColor, colorMap) => {
     for (const key in colorMap) {
         if (Object.hasOwnProperty.call(colorMap, key)) {
             const element = colorMap[key];
-            if (element === rawColor) {
+            if (rawColor?.toLocaleLowerCase() === element?.toLocaleLowerCase()) {
                 return key;
             }
         }
@@ -12,7 +12,8 @@ const varColor = (rawColor, colorMap) => {
 };
 
 function loader(source) {
-    const {colorMap = {}} = this.getOptions();
+    // 不想安装loader-utils 包，直接看其源码 得知 v2 版本是使用的 this.getOptions() v3 版本用的  this.query
+    const {colorMap = {}} = this.query || this.getOptions();
     const matchResults = source.match(colorRe);
     if (Array.isArray(matchResults) && matchResults.length > 0) {
         Array.from(new Set(matchResults)).forEach(rawColor => {

@@ -14,7 +14,7 @@
 
 ```bash
 # 为当前项目安装
-npm i -D var-color-replace-loader
+npm i -D @fu1996/var-color-replace-loader
 ```
 
 ## 🏄 配置如下：
@@ -26,7 +26,7 @@ npm i -D var-color-replace-loader
     test: /\.less$/,
     use: ['style-loader', 'css-loader', 'less-loader', 
     {
-        loader: 'var-color-replace-loader',
+        loader: '@fu1996/var-color-replace-loader',
         options: {
             // 将项目中使用到的 #f5f8ff 替换为颜色变量 --color-cyan-1
             colorMap: {
@@ -47,6 +47,7 @@ body {
     width: 200px;
     height: 200px;
     background: #f5f8ff;
+    background: #F5F8FF; // 忽略大小写匹配
     color: #049160;
     border-color: #41a7fa;
     color: #adc;
@@ -59,6 +60,7 @@ body {
 body {
     width: 200px;
     height: 200px;
+    background: var(--color-cyan-1);
     background: var(--color-cyan-1);
     color: var(--color-emerald-7);
     border-color: var(--color-indigo-5);

@@ -2,7 +2,7 @@
 
 ## Install this loader
 ```shell
-npm i -D var-color-replace-loader
+npm i -D @fu1996/var-color-replace-loader
 ```
 
 ## How to configure
@@ -11,7 +11,7 @@ Take less as an example
             {
                 test: /\.less$/,
                 use: ['style-loader', 'css-loader', 'less-loader', {
-                    loader: 'var-color-replace-loader',
+                    loader: '@fu1996/var-color-replace-loader',
                     options: {
                         // color map object
                         colorMap: {

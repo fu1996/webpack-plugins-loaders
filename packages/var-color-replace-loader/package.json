@@ -1,14 +1,18 @@
 {
   "name": "@fu1996/var-color-replace-loader",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "a webpack loader can replace var color",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
+  "files": [
+    "!index.test.js",
+    "!color.js"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fu1996/var-color-replace-loader.git"
+    "url": "git+https://github.com/fu1996/webpack-plugins-loaders.git"
   },
   "keywords": [
     "var",
@@ -18,11 +22,11 @@
     "loader"
   ],
   "author": "fu1996",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fu1996/var-color-replace-loader/issues"
+    "url": "https://github.com/fu1996/webpack-plugins-loaders/issues"
   },
-  "homepage": "https://github.com/fu1996/var-color-replace-loader#readme",
+  "homepage": "https://github.com/fu1996/webpack-plugins-loaders#readme",
   "devDependencies": {
     "jest": "^28.1.1"
   }

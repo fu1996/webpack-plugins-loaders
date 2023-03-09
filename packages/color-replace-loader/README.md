@@ -6,7 +6,7 @@
 
 ## 🎉 项目名称和原理
 
-`名称：` wenpack 颜色替换工具
+`名称：` webpack 颜色替换工具
 
 `原理：` 使用 loader 通过正则，把颜色查找出来 并进行替换
 
@@ -14,7 +14,7 @@
 
 ```bash
 # 为当前项目安装
-npm i -D color-replace-loader
+npm i -D @fu1996/color-replace-loader
 ```
 
 ## 🏄 配置如下：
@@ -26,7 +26,7 @@ npm i -D color-replace-loader
     test: /\.less$/,
     use: ['style-loader', 'css-loader', 'less-loader', 
     {
-        loader: 'color-replace-loader',
+        loader: '@fu1996/color-replace-loader',
         options: {
             // key：要替换的颜色值 ，value：替换后的目标值
             colorReplaceMap: {
@@ -46,7 +46,8 @@ npm i -D color-replace-loader
 body {
     width: 200px;
     height: 200px;
-    background: #fff;
+    background: #fff; // 匹配规则忽略大小写
+    background: #FFF;
     color: #aaa;
     border-color: #ccc;
     color: #adc;
@@ -59,6 +60,7 @@ body {
 body {
     width: 200px;
     height: 200px;
+    background: #000;
     background: #000;
     color: #bbb;
     border-color: #ddd;

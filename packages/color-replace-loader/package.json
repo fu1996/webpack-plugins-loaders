@@ -1,14 +1,18 @@
 {
   "name": "@fu1996/color-replace-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a webpack color replace loader",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
+  "files": [
+    "!index.test.js",
+    "!color.js"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fu1996/color-replace-loader.git"
+    "url": "git+https://github.com/fu1996/webpack-plugins-loaders.git"
   },
   "keywords": [
     "color",
@@ -17,11 +21,11 @@
     "webpack"
   ],
   "author": "fu1996",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fu1996/color-replace-loader/issues"
+    "url": "https://github.com/fu1996/webpack-plugins-loaders/issues"
   },
-  "homepage": "https://github.com/fu1996/color-replace-loader#readme",
+  "homepage": "https://github.com/fu1996/webpack-plugins-loaders#readme",
   "devDependencies": {
     "jest": "^28.1.1"
   }
