@@ -4,7 +4,7 @@ const varColor = (rawColor, colorMap) => {
     for (const key in colorMap) {
         if (Object.hasOwnProperty.call(colorMap, key)) {
             const element = colorMap[key];
-            if (rawColor?.toLocaleLowerCase() === element?.toLocaleLowerCase()) {
+            if (rawColor.toLocaleLowerCase() === element.toLocaleLowerCase()) {
                 return key;
             }
         }

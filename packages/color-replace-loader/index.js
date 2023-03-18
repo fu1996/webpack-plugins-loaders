@@ -11,7 +11,7 @@ function loader(source) {
     // 借助Proxy 实现大小写忽略的功能
     const newColorReplaceMap = new Proxy(colorReplaceMap, {
         get: function (target, property, receiver) {
-            return target[property] || target[property?.toLocaleLowerCase()] || target[property?.toLocaleUpperCase()];
+            return target[property] || target[property.toLocaleLowerCase && property?.toLocaleLowerCase()] || target[property.toLocaleUpperCase && property?.toLocaleUpperCase()];
         },
     });
     const matchResults = source.match(colorRe);
