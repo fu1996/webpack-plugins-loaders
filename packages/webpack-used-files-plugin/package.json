@@ -13,6 +13,10 @@
     "enhanced-resolve"
   ],
   "author": "fujunkui",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fu1996/webpack-plugins-loaders.git"
+  },
   "homepage": "https://github.com/fu1996/webpack-plugins-loaders/tree/main/packages/webpack-used-files-plugin",
   "license": "MIT"
 }

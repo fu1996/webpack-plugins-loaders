@@ -11,6 +11,10 @@
   "bin": {
     "itt": "./bin/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fu1996/webpack-plugins-loaders.git"
+  },
   "keywords": [],
   "author": "fujunkui",
   "license": "MIT",

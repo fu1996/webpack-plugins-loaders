@@ -18,7 +18,10 @@
   ],
   "author": "fujunkui",
   "license": "MIT",
-  "github": "https://github.com/fu1996/webpack-plugins-loaders/tree/main/packages/webpack-resolve-mode-plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fu1996/webpack-plugins-loaders.git"
+  },
   "dependencies": {
     "enhanced-resolve": "^5.10.0",
     "schema-utils": "^4.0.0"

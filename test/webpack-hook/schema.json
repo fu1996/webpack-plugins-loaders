@@ -1,0 +1,60 @@
+{
+  "title": "WebpackResolverModePlugin",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "mode": {
+      "description": "The packaging mode of the current program.",
+      "type": "string"
+    },
+    "excludes": {
+      "oneOf": [
+        {
+          "description": "Directories to be excluded during plug-in operation, supporting string, array and regular",
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "description": "A non-empty string",
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              {
+                "type": "string"
+              },
+              {
+                "description": "Every matched dependency becomes external.",
+                "instanceof": "RegExp",
+                "tsType": "RegExp"
+              }
+            ]
+          }
+        },
+        {
+          "description": "Directories to be excluded during plug-in operation, supporting string, array and regular",
+          "type": "string"
+        },
+        {
+          "description": "regular expression",
+          "instanceof": "RegExp",
+          "tsType": "RegExp"
+        }
+      ]
+    },
+    "includeFileSuffix": {
+      "description": "Which file types are matched by the plug-in",
+      "type": "array",
+      "items": {
+        "description": "file extension",
+        "type": "string"
+      }
+    },
+    "debug": {
+      "description": "Whether to output the work log",
+      "type": "boolean"
+    }
+  }
+}
