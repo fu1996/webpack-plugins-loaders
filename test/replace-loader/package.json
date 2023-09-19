@@ -1,6 +1,6 @@
 {
   "name": "@fjk-test/replace-loader",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a webpack color replace loader",
   "main": "index.js",
   "scripts": {
