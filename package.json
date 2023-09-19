@@ -1,14 +1,19 @@
 {
   "name": "webpack-plugins-loaders",
   "version": "1.0.0",
-  "private":"true",
+  "private": "true",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "publish": "sh scripts/publish.sh"
+    "publish": "lerna publish",
+    "clean": "lerna clean -y && rm -rf node_modules"
   },
   "keywords": [],
   "author": "fujunkui",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^7.1.5"
+  }
 }

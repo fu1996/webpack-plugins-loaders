@@ -1,7 +1,5 @@
 import type {Resolver} from 'enhanced-resolve';
 
-mode, excludes, includeFileSuffix, debug = false 
-
 declare interface WebpackResolverModePluginOptions {
 	/**
 	 * The packaging mode of the current program.

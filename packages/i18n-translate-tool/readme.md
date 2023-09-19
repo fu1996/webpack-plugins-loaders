@@ -106,6 +106,6 @@ export const a = {
 
 ## ⏰ 如果该库帮助了您，期待您的 star
 
-Github 地址：[欢迎Star⭐️](https://github.com/fu1996/color-replace-loader.git)
+Github 地址：[欢迎Star⭐️](https://github.com/fu1996/webpack-plugins-loaders/tree/main/packages/i18n-translate-tool)
 
 
