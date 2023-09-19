@@ -12,14 +12,14 @@
 
 `注意事项：`
 
-暂未发现
+vue 项目中暂时存在问题，可使用 [webpack.NormalModuleReplacementPlugin](https://webpack.docschina.org/plugins/normal-module-replacement-plugin/) 进行平替。
 
 
 ## 📦 安装方式
 
 ```bash
 # 为当前项目安装
-npm i -D @fu1996/webapck-resolver-mode-plugin
+npm i -D @fu1996/webpack-resolver-mode-plugin
 ```
 
 ## 🏄 配置如下：
@@ -35,7 +35,7 @@ npm i -D @fu1996/webapck-resolver-mode-plugin
 
 ```js
 // 引入该插件
-const WebpackResolverModePlugin = require('@fu1996/webapck-resolver-mode-plugin');
+const WebpackResolverModePlugin = require('@fu1996/webpack-resolver-mode-plugin');
 ```
 
 ```js
