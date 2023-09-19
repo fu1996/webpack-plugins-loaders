@@ -12,7 +12,8 @@
 
 `注意事项：`
 
-vue 项目中暂时存在问题，可使用 [webpack.NormalModuleReplacementPlugin](https://webpack.docschina.org/plugins/normal-module-replacement-plugin/) 进行平替。
+- 当前版本暂时不支持 `vue` 项目，等待修复（欢迎大家提PR），
+- 可使用 [webpack.NormalModuleReplacementPlugin](https://webpack.docschina.org/plugins/normal-module-replacement-plugin/) 进行平替。
 
 
 ## 📦 安装方式
