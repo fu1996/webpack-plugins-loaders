@@ -81,7 +81,7 @@ npx husky install
 
 https://juejin.cn/post/6934292467160514567?searchId=20230921103616876212AA58AE9D712DEE#heading-6
 
-## lerna 模式下配置 release工具
+## lerna 模式下配置 release工具 【一顿搜索】
 
 https://github.com/atlassian/lerna-semantic-release
 
