@@ -10,6 +10,7 @@ module.exports = {
     'style',
     'ci',
     'perf',
+    'release',
   ],
   maxMessageLength: 72,
   minMessageLength: 3,
