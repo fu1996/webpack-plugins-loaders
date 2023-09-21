@@ -1,6 +1,6 @@
 {
   "name": "@fu1996/color-replace-loader",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "a webpack color replace loader",
   "publishConfig": {
     "access": "public"
