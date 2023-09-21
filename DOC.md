@@ -80,3 +80,9 @@ npx husky install
 ## 配置 commit 模板
 
 https://juejin.cn/post/6934292467160514567?searchId=20230921103616876212AA58AE9D712DEE#heading-6
+
+## lerna 模式下配置 release工具
+
+https://github.com/atlassian/lerna-semantic-release
+
+https://github.com/release-it-plugins/workspaces
