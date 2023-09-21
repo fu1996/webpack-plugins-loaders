@@ -1,0 +1,106 @@
+name: Release Packages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    # let's ignore release commits, otherwise it'll try to run twice
+    if: |
+      !startsWith(github.event.head_commit.message , 'chore(release):') &&
+      !startsWith(github.event.head_commit.message , 'chore(repo):')
+
+    runs-on: ubuntu-latest
+
+    name: release
+
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Update Master
+        run: |
+          git pull --force --no-tags origin master:master
+          git checkout master
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+
+      - name: Enable Corepack
+        id: pnpm-setup
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
+          pnpm config set script-shell "/usr/bin/bash"
+          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
+      - name: pnpm Cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-setup.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: ESLint Cache
+        uses: actions/cache@v3
+        with:
+          path: ./.eslintcache
+          key: ${{ runner.os }}-eslintcache-${{ hashFiles('./eslintcache') }}
+          restore-keys: |
+            ${{ runner.os }}-eslintcache-
+
+      - name: Sanity Check
+        run: |
+          echo git `git version`;
+          echo branch `git branch --show-current`;
+          echo node `node -v`;
+          echo pnpm `pnpm -v`
+          echo `moon --version`
+
+      - name: Initliaze .npmrc
+        run: >
+          echo -e "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}\n$(cat .npmrc)" > .npmrc
+          && cat -n .npmrc
+
+      - name: Set Git Config
+        run: |
+          git config pull.rebase false
+          git config --global user.email "release-workflow@rollup.dev"
+          git config --global user.name "Release Workflow"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
+
+      - name: pnpm install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Packages
+        run: pnpm --recursive build
+
+      - name: Lint Monorepo
+        run: pnpm lint
+
+      - name: Run Tests
+        run: pnpm --filter [HEAD^] test
+
+      - name: Release and Publish Packages
+        run: pnpm --filter [HEAD^] --workspace-concurrency=1 release
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Push Release and Cleanup
+        run: |
+          pnpm lint:docs
+          git checkout .npmrc
+          git add . && git commit --amend --no-edit
+          git pull origin master --no-edit
+          git rebase
+          git push origin HEAD:master
+          git push origin HEAD:master --tags

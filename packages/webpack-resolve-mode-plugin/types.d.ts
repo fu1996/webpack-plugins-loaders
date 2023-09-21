@@ -1,42 +1,42 @@
-import type {Resolver} from 'enhanced-resolve';
+import type { Resolver } from 'enhanced-resolve';
 
 declare interface WebpackResolverModePluginOptions {
-	/**
-	 * The packaging mode of the current program.
-     * 
-     * default: '',
-	 */
-	mode: string;
+  /**
+   * The packaging mode of the current program.
+   *
+   * default: '',
+   */
+  mode: string;
 
-	/**
-     * Directories to be excluded during plug-in operation, supporting strings or arrays
-     * default: /node_modules/,
-     * 
-     * demo:
-     * 
-     *      excludes: /node_modulse/,
-     * 
-     *      excludes: [/node_modules/, 'exclude-dir'],
-	 */
-	excludes: string | Array<string>;
+  /**
+   * Directories to be excluded during plug-in operation, supporting strings or arrays
+   * default: /node_modules/,
+   *
+   * demo:
+   *
+   *      excludes: /node_modulse/,
+   *
+   *      excludes: [/node_modules/, 'exclude-dir'],
+   */
+  excludes: string | Array<string>;
 
-	/**
-	 * Which file types are matched by the plug-in
-     * 
-     * default: ['.js']
-	 */
-	includeFileSuffix: string[];
+  /**
+   * Which file types are matched by the plug-in
+   *
+   * default: ['.js']
+   */
+  includeFileSuffix: string[];
 
-	/**
-	 * Whether to output the work log
-     * 
-     * default: false
-	 */
-	debug: boolean;
+  /**
+   * Whether to output the work log
+   *
+   * default: false
+   */
+  debug: boolean;
 }
 
 declare class WebpackResolverModePlugin {
-    constructor(options:WebpackResolverModePluginOptions);
-    options:WebpackResolverModePluginOptions;
-    apply(resolver:Resolver): void;
+  constructor(options: WebpackResolverModePluginOptions);
+  options: WebpackResolverModePluginOptions;
+  apply(resolver: Resolver): void;
 }

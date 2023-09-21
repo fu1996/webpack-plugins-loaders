@@ -3,7 +3,6 @@
 - 公有云/私有云几乎相同的逻辑要使用于 其他端，仅仅是UI上不一致，`总结`：一个仓库，根据不同的配置去适配多端
 - 客户的数量增加，导致某些标准化的请求难以满足客户，出现了定制化需求的同时，还要保证标准化的功能，`总结`：既要日常迭代的标准化，又要专属于某客户的定制化
 
-
 ## 🎉 项目名称，原理以及注意事项
 
 `名称：` webpack条件编译插件（根据文件后缀进行条件编译，参考自滴滴开源的MDX跨端小程序）
@@ -14,7 +13,6 @@
 
 - 当前版本暂时不支持 `vue` 项目，等待修复（欢迎大家提PR），
 - 可使用 [webpack.NormalModuleReplacementPlugin](https://webpack.docschina.org/plugins/normal-module-replacement-plugin/) 进行平替。
-
 
 ## 📦 安装方式
 
@@ -52,20 +50,20 @@ resolve: {
 ```
 
 假设 index.js 文件如下：
-```js
-import a from './a'
 
-console.log('2222',a)
+```js
+import a from './a';
+
+console.log('2222', a);
 ```
 
 假设同时 存在 `a.h5.js`和`a.js`，则 `a.h5.js`会选择作为 index.js 文件的依赖被打包进产物
 
 ## 📣 后续开发计划
+
 1. 改为 ts
 2. 完善readme.md 的API文档
 
 ## ⏰ 如果该库帮助了您，期待您的 star
 
 Github 地址：[欢迎Star⭐️](https://github.com/fu1996/webpack-plugins-loaders/tree/main/packages/webpack-resolve-mode-plugin)
-
-

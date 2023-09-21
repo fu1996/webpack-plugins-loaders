@@ -1,1 +1,1 @@
-console.log('foo h5')
+console.log('foo h5');

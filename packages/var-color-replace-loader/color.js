@@ -109,4 +109,4 @@ module.exports = {
   '--color-magenta-8': '#942171',
   '--color-magenta-9': '#6e1354',
   '--color-magenta-10': '#470937',
-}
+};

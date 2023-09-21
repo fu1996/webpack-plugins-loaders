@@ -1,42 +1,53 @@
-const path = require("path");
-const basename = require("enhanced-resolve/lib/getPaths").basename;
+const path = require('path');
+const basename = require('enhanced-resolve/lib/getPaths').basename;
 const { validate } = require('schema-utils');
 const schema = require('./schema.json');
 
 /** @typedef {import('./types').WebpackResolverModePluginOptions} WebpackResolverModePluginOptions */
 
 function addInfix(resourcePath, infix, extname) {
-  extname = extname || path.extname(resourcePath)
-  return resourcePath.substring(0, resourcePath.length - extname.length) + '.' + infix + extname
+  extname = extname || path.extname(resourcePath);
+  return (
+    resourcePath.substring(0, resourcePath.length - extname.length) +
+    '.' +
+    infix +
+    extname
+  );
 }
 
 function stringIncludes(string, maybeString) {
-  return typeof maybeString === "string" ? string.includes(maybeString) : false;
+  return typeof maybeString === 'string' ? string.includes(maybeString) : false;
 }
 
 module.exports = class WebpackResolverModePlugin {
   /**
-   * 
+   *
    * @param {WebpackResolverModePluginOptions=} options options object
    */
   constructor(options) {
     validate(schema, options, {
-      name: 'WebpackResolverModePlugin'
-  })
-    const { mode = '', excludes = /node_modules/, includeFileSuffix = ['.js'], debug = false } = options;
+      name: 'WebpackResolverModePlugin',
+    });
+    const {
+      mode = '',
+      excludes = /node_modules/,
+      includeFileSuffix = ['.js'],
+      debug = false,
+    } = options;
     this.mode = mode;
-    this.excludes =  excludes && !Array.isArray(excludes) ? [excludes] : excludes,
-    // this.include =  include && !Array.isArray(include) ? [include] : include,
-    this.includeFileSuffix = includeFileSuffix;
+    (this.excludes =
+      excludes && !Array.isArray(excludes) ? [excludes] : excludes),
+      // this.include =  include && !Array.isArray(include) ? [include] : include,
+      (this.includeFileSuffix = includeFileSuffix);
     this.debug = debug;
   }
 
   apply(resolver) {
-    const target = resolver.ensureHook("file");
+    const target = resolver.ensureHook('file');
     const mode = this.mode;
     resolver
-      .getHook("before-file")
-      .tapAsync("AddModePlugin", (request, resolveContext, callback) => {
+      .getHook('before-file')
+      .tapAsync('AddModePlugin', (request, resolveContext, callback) => {
         // 请求的mode 存在，或者 填入的mode 为空
         if (request.mode || !mode) {
           return callback();
@@ -55,7 +66,8 @@ module.exports = class WebpackResolverModePlugin {
           this.excludes &&
           this.excludes.some(function (excludes) {
             return (
-              resourcePath.search(excludes) >= 0 || stringIncludes(resourcePath, excludes)
+              resourcePath.search(excludes) >= 0 ||
+              stringIncludes(resourcePath, excludes)
             );
           })
         ) {
@@ -82,9 +94,9 @@ module.exports = class WebpackResolverModePlugin {
         resolver.doResolve(
           target,
           Object.assign({}, request, obj),
-          "add mode: " + mode,
+          'add mode: ' + mode,
           resolveContext,
-          callback
+          callback,
         );
       });
   }

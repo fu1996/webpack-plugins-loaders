@@ -24,7 +24,7 @@ npm i -D @fu1996/replace-loader
 ```js
 {
     test: /\.less$/,
-    use: ['style-loader', 'css-loader', 'less-loader', 
+    use: ['style-loader', 'css-loader', 'less-loader',
     {
         loader: 'replace-loader',
         options: {
@@ -40,16 +40,17 @@ npm i -D @fu1996/replace-loader
 ```
 
 ## 📝 demo
+
 当前 less 文件如下内容
 
 ```less
 body {
-    width: 200px;
-    height: 200px;
-    background: #fff;
-    color: #aaa;
-    border-color: #ccc;
-    color: #adc;
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  color: #aaa;
+  border-color: #ccc;
+  color: #adc;
 }
 ```
 
@@ -57,15 +58,14 @@ body {
 
 ```css
 body {
-    width: 200px;
-    height: 200px;
-    background: #000;
-    color: #bbb;
-    border-color: #ddd;
-    color: #adc;
+  width: 200px;
+  height: 200px;
+  background: #000;
+  color: #bbb;
+  border-color: #ddd;
+  color: #adc;
 }
 ```
-
 
 ## 📣 后续开发计划
 

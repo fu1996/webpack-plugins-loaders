@@ -1,5 +1,7 @@
-const getDefaultTemplate = (obj = {}) => `export default ${JSON.stringify(obj, undefined, 2)}`;
-const getVarTemplate = (obj = {}, varName) => `export const ${varName} = ${JSON.stringify(obj, undefined, 2)}`;
+const getDefaultTemplate = (obj = {}) =>
+  `export default ${JSON.stringify(obj, undefined, 2)}`;
+const getVarTemplate = (obj = {}, varName) =>
+  `export const ${varName} = ${JSON.stringify(obj, undefined, 2)}`;
 
 // const a = getDefaultTemplate({
 //     countersignatureAll: '会签（须所有审批人同意）',
@@ -16,6 +18,6 @@ const getVarTemplate = (obj = {}, varName) => `export const ${varName} = ${JSON.
 //   console.log('a', a, b);
 
 module.exports = {
-    getDefaultTemplate,
-    getVarTemplate,
-}
+  getDefaultTemplate,
+  getVarTemplate,
+};

@@ -24,7 +24,7 @@ npm i -D @fu1996/var-color-replace-loader
 ```js
 {
     test: /\.less$/,
-    use: ['style-loader', 'css-loader', 'less-loader', 
+    use: ['style-loader', 'css-loader', 'less-loader',
     {
         loader: '@fu1996/var-color-replace-loader',
         options: {
@@ -40,17 +40,18 @@ npm i -D @fu1996/var-color-replace-loader
 ```
 
 ## 📝 demo
+
 当前 less 文件如下内容
 
 ```less
 body {
-    width: 200px;
-    height: 200px;
-    background: #f5f8ff;
-    background: #F5F8FF; // 忽略大小写匹配
-    color: #049160;
-    border-color: #41a7fa;
-    color: #adc;
+  width: 200px;
+  height: 200px;
+  background: #f5f8ff;
+  background: #f5f8ff; // 忽略大小写匹配
+  color: #049160;
+  border-color: #41a7fa;
+  color: #adc;
 }
 ```
 
@@ -58,16 +59,15 @@ body {
 
 ```css
 body {
-    width: 200px;
-    height: 200px;
-    background: var(--color-cyan-1);
-    background: var(--color-cyan-1);
-    color: var(--color-emerald-7);
-    border-color: var(--color-indigo-5);
-    color: #adc;
+  width: 200px;
+  height: 200px;
+  background: var(--color-cyan-1);
+  background: var(--color-cyan-1);
+  color: var(--color-emerald-7);
+  border-color: var(--color-indigo-5);
+  color: #adc;
 }
 ```
-
 
 ## 📣 后续开发计划
 
