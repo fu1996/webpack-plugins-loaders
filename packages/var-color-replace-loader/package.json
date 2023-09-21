@@ -1,10 +1,14 @@
 {
   "name": "@fu1996/var-color-replace-loader",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "a webpack loader can replace var color",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "release": "release-it"
+  },
+  "release-it": {
+    "git": false
   },
   "files": [
     "!index.test.js",

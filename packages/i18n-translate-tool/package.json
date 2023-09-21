@@ -1,12 +1,16 @@
 {
   "name": "@fu1996/i18n-translate-tool",
-  "version": "1.2.8",
+  "version": "1.2.10",
   "description": "",
   "main": "index.js",
   "git": "https://github.com/fu1996/i18n-translate-tool.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "node bin/postinstall.js || exit 0"
+    "postinstall": "node bin/postinstall.js || exit 0",
+    "release": "release-it"
+  },
+  "release-it": {
+    "git": false
   },
   "bin": {
     "itt": "./bin/index.js"

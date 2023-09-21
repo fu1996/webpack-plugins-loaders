@@ -4,7 +4,11 @@
   "description": "A plug-in used in webpack to find which files are used",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it"
+  },
+  "release-it": {
+    "git": false
   },
   "keywords": [
     "webpack",

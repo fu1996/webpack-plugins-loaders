@@ -1,13 +1,17 @@
 {
   "name": "@fu1996/color-replace-loader",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "a webpack color replace loader",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "test": "jest",
-    "build": "rollup -c ./rollup.config.mjs"
+    "build": "rollup -c ./rollup.config.mjs",
+    "release": "release-it"
+  },
+  "release-it": {
+    "git": false
   },
   "files": [
     "dist/*",

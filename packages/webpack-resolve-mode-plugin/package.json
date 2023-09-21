@@ -9,7 +9,11 @@
     "schema.json"
   ],
   "scripts": {
-    "prepublish": "jest"
+    "prepublish": "jest",
+    "release": "release-it"
+  },
+  "release-it": {
+    "git": false
   },
   "keywords": [
     "webpack",

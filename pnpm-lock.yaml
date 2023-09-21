@@ -8,6 +8,7 @@ importers:
       '@commitlint/config-conventional': ^17.7.0
       '@jest/globals': ^29.7.0
       '@release-it-plugins/lerna-changelog': ^6.0.0
+      '@release-it/bumper': ^5.1.0
       '@rollup/plugin-commonjs': ^25.0.4
       '@rollup/plugin-node-resolve': ^15.2.1
       '@rollup/plugin-typescript': ^11.1.3
@@ -40,6 +41,7 @@ importers:
       '@commitlint/config-conventional': 17.7.0
       '@jest/globals': 29.7.0
       '@release-it-plugins/lerna-changelog': 6.0.0_release-it@16.1.5
+      '@release-it/bumper': 5.1.0_release-it@16.1.5
       '@rollup/plugin-commonjs': 25.0.4_rollup@3.29.2
       '@rollup/plugin-node-resolve': 15.2.1_rollup@3.29.2
       '@rollup/plugin-typescript': 11.1.3_qjxsdb6m26bk2g4izdximdgoae
@@ -1719,6 +1721,22 @@ packages:
     transitivePeerDependencies:
       - bluebird
       - supports-color
+    dev: true
+
+  /@release-it/bumper/5.1.0_release-it@16.1.5:
+    resolution: {integrity: sha512-mnM5QQJvK+4sqLpU7vkDbGMGh1QNwdnWNPqrkfOCyr/cKgRDvb8e+nbiNZzyI/1XsxSjnfLHDecRVuqucwE6BQ==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      release-it: ^16.0.0
+    dependencies:
+      '@iarna/toml': 2.2.5
+      detect-indent: 7.0.1
+      fast-glob: 3.3.1
+      ini: 4.1.1
+      js-yaml: 4.1.0
+      lodash-es: 4.17.21
+      release-it: 16.1.5
+      semver: 7.5.4
     dev: true
 
   /@rollup/plugin-commonjs/25.0.4_rollup@3.29.2:
@@ -3566,6 +3584,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /detect-indent/7.0.1:
+    resolution: {integrity: sha512-Mc7QhQ8s+cLrnUfU/Ji94vG/r8M26m8f++vyres4ZoojaRDpZ1eSIh/EpzLNwlWuvzSZ3UbDFspjFvTDXe6e/g==}
+    engines: {node: '>=12.20'}
+    dev: true
+
   /detect-newline/3.1.0:
     resolution: {integrity: sha512-TLz+x/vEXm/Y7P7wn1EJFNLxYpUD4TgMosxY6fAVJUnJMbupHBOncxyWUG9OpTaH9EBD7uFI5LfEgmMOc54DsA==}
     engines: {node: '>=8'}
@@ -4970,6 +4993,11 @@ packages:
   /ini/2.0.0:
     resolution: {integrity: sha512-7PnF4oN3CvZF23ADhA5wRaYEQpJ8qygSkbtTXWBeXWXmEVRXK+1ITciHWwHhsjv1TmW0MgacIv6hEi5pX5NQdA==}
     engines: {node: '>=10'}
+    dev: true
+
+  /ini/4.1.1:
+    resolution: {integrity: sha512-QQnnxNyfvmHFIsj7gkPcYymR8Jdw/o7mp5ZFihxn6h8Ci6fh3Dx4E1gPjpQEpIuPo9XVNY/ZUwh4BPMjGyL01g==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dev: true
 
   /init-package-json/5.0.0:
@@ -6788,6 +6816,10 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       p-locate: 5.0.0
+    dev: true
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
     dev: true
 
   /lodash._reinterpolate/3.0.0:
