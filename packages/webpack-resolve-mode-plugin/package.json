@@ -1,6 +1,6 @@
 {
   "name": "@fu1996/webpack-resolver-mode-plugin",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A Webpack plug-in that compiles files with different endings according to different configurations (conditional compilation at the file level)",
   "main": "index.js",
   "files": [

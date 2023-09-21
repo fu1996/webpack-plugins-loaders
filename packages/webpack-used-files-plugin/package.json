@@ -1,6 +1,6 @@
 {
   "name": "@fu1996/webpack-used-files-plugin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A plug-in used in webpack to find which files are used",
   "main": "index.js",
   "scripts": {
