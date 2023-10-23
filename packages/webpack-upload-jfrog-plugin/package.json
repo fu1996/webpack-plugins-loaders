@@ -1,6 +1,6 @@
 {
   "name": "@fu1996/webpack-upload-jfrog-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A webpack plugin that can customize uploading files to jfrog",
   "main": "index.js",
   "files": [

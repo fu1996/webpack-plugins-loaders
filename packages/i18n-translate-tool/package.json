@@ -1,6 +1,6 @@
 {
   "name": "@fu1996/i18n-translate-tool",
-  "version": "1.2.10",
+  "version": "1.2.11-alpha.0",
   "description": "",
   "main": "index.js",
   "git": "https://github.com/fu1996/i18n-translate-tool.git",
