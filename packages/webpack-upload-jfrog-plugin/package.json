@@ -7,7 +7,6 @@
     "!demo"
   ],
   "scripts": {
-    "prepublish": "jest",
     "release": "release-it"
   },
   "release-it": {
