@@ -1,0 +1,27 @@
+{
+  "title": "UploadJfrogPlugin",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "jfrogUserName": {
+      "description": "jfrog user name",
+      "type": "string"
+    },
+    "jfrogUserPassword": {
+      "description": "jfrog user password",
+      "type": "string"
+    },
+    "jfrogPath": {
+      "description": "jfrog path to upload",
+      "type": "string"
+    },
+    "publicPath": {
+      "description": "assets path to public",
+      "type": "string"
+    },
+    "debug": {
+      "description": "Whether to output the work log",
+      "type": "boolean"
+    }
+  }
+}

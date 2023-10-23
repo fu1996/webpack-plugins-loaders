@@ -58,6 +58,8 @@ pnpm i eslint-config-prettier -Dw
 ```shell
 pnpm i husky lint-staged -Dw
 npx husky install
+npm pkg set scripts.prepare="husky install"
+npx husky add .husky/pre-commit "npx lint-staged"
 ```
 
 在 package.json 中配置：

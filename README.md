@@ -12,3 +12,7 @@
 - packages/webpack-used-files-plugin：查找项目中用到的文件（会被webpack打包所使用）的工具
 
 ## ⏰ 如果该库帮助了您，期待您的 star
+
+## 帮助链接：
+
+语义化版本：https://semver.org/lang/zh-CN/

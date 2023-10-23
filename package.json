@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "test": "jest",
-    "publish": "lerna publish",
+    "publishNpm": "lerna publish",
     "clean": "lerna clean -y && rm -rf node_modules && pnpm i",
     "prettier:check": "prettier --write --config .prettierrc.js --check .",
     "eslint:fix": "eslint --fix \"**/*.{ts,tsx}\"",

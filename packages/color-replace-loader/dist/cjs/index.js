@@ -24,7 +24,7 @@ function loader(source) {
                 resultKey = getTargetColor(rawColor, newColorReplaceMap);
                 memoizeMap.set(rawColor, resultKey);
             }
-            var reg = new RegExp(rawColor, "g");
+            var reg = new RegExp(rawColor, 'g');
             source = source.replace(reg, resultKey);
         });
     }

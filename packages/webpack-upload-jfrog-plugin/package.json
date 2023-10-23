@@ -1,0 +1,40 @@
+{
+  "name": "@fu1996/webpack-upload-jfrog-plugin",
+  "version": "1.0.0",
+  "description": "A webpack plugin that can customize uploading files to jfrog",
+  "main": "index.js",
+  "files": [
+    "!demo"
+  ],
+  "scripts": {
+    "prepublish": "jest",
+    "release": "release-it"
+  },
+  "release-it": {
+    "git": false
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "jfrog",
+    "upload-jfrog-plugin"
+  ],
+  "author": "fujunkui",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fu1996/webpack-plugins-loaders.git"
+  },
+  "dependencies": {
+    "glob": "^10.3.3",
+    "schema-utils": "^4.0.0"
+  },
+  "peerDependencies": {
+    "glob": "^10.3.3",
+    "schema-utils": "^4.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "webpack": "4.x"
+  }
+}
