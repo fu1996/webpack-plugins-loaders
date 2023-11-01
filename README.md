@@ -2,7 +2,7 @@
 
 ## 📋 目录结构
 
-- packages/color-replace-loader：wenpack 颜色替换工具
+- packages/color-replace-loader：webpack 颜色替换工具
 
 - packages/i18n-translate-tool：国际化翻译脚手架工具 【因谷歌翻译失效，暂时不可用】
 - packages/var-color-replace-loader：css变量颜色替换工具
